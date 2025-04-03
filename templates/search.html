@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>Search Candidate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search Candidate</h2>
+        {% if exam %}
+        <h3>You are doing: {{ exam | capitalize }} Assessment</h3>
+    {% endif %}
+
+        <p>Enter the <strong>Full Name</strong> or <strong>TVET CDACC REG. NO.</strong>to retrieve your <br>TVET CDACC Examination Card.</p>
+        <p>View and Print the Official Examination Card:</p>
+        <br>
+        <form method="post" action="/card">
+            <input type="text" name="query" placeholder="Enter Name or Reg Number" required>
+            <br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+

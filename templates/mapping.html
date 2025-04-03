@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate RegNo Mapping</title>
+</head>
+<body>
+    <h1>TVET CDACC REG. NO. to Candidate Name Mapping</h1>
+    <table border="1">
+        <tr>
+            <th>TVET CDACC REG. NO.</th>
+            <th>Candidate Name</th>
+        </tr>
+        {% for regno, name in mapping.items() %}
+        <tr>
+            <td>{{ regno }}</td>
+            <td>{{ name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
